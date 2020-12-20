@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url("frosty-blue-polygon_2560x1440.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+    180deg,
+    rgba(93, 186, 225, 0.1),
+    rgba(123, 183, 82, 0.5),
+    rgba(93, 75, 137, 1)
+  );
+  min-height: 100vh;
+  width: 100%;
+  max-width: 450px;
+}
+h1 {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.search-form {
+  padding: 40px, 15px, 40px;
+  width: 100%;
+}
+h2 {
+  font-family: "Lobster", cursive;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+main,
+footer {
+  color: rgb(255, 255, 255);
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#dayTime {
+  padding-top: 15px;
+}
+.col {
+  text-align: center;
+}
+.col-3 {
+  font-size: 14px;
+}
+.col-4 {
+  font-size: 14px;
+}
