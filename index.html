@@ -17,13 +17,13 @@
       src="https://kit.fontawesome.com/127cae9b3d.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="src/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>inFlo Weather</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container weather-app">
       <h1>inFlo Weather</h1>
       <header>
         <div class="row">
@@ -33,12 +33,16 @@
                 <div class="input-group mb-3">
                   <input
                     type="search"
-                    class="searching-form"
-                    id="city-search"
+                    class="form-control"
+                    id="search-text-input"
                     placeholder="Enter a city"
                   />
                   <div class="btn-group">
-                    <button type="submit" id="search-button" type="button">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      id="button-addon2"
+                    >
                       <i class="fas fa-search"></i>
                     </button>
                     <div class="find-your-location">
@@ -65,23 +69,17 @@
         </div>
         <div class="row">
           <div class="col">
-            <div id="presentDay">Monday</div>
+            <div id="dayTime">Monday 6:00AM</div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <div id="dateYearTime">01/04/2021 1:00PM</div>
+            <div id="dateYear">December 14, 2020</div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <h3>
-              <span id="temperature"> 33/16</span>
-              <span class="units"
-                ><a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a></span
-              >
-            </h3>
+            <h3><span id="temperature"> 33/16</span> °C|°F</h3>
           </div>
         </div>
         <div class="row">
@@ -95,50 +93,45 @@
           </div>
         </div>
       </main>
-      <div class="container">
-        <div class="row">
-          <div class="col-md" id="sunday">
-            Sunday <br />
-            ⛅ 42°|34°
-          </div>
-          <div class="col-md" id="monday">
-            Monday <br />
-            ⛅ 42°|34°
-          </div>
-          <div class="col-md" id="tuesday">
-            Tuesday <br />
-            🌧 42°|31°
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="container">
-        <div class="row">
-          <div class="col-3" id="wednesday">
-            Wednesday <br />
-            🌧 52°|41°
-          </div>
-          <div class="col-3" id="thursday">
-            Thursday <br />
-            ☁ 49°|36°
-          </div>
-          <div class="col-3" id="friday">
-            Friday <br />
-            ⛅ 49°|33°
-          </div>
-          <div class="col-3" id="saturday">
-            Saturday <br />
-            🌞 46°|34°
-          </div>
-        </div>
-      </div>
       <footer>
-        <a href="https://github.com/inFlo1/first-weather-app" target="_blank"
-          >Open-source code</a
-        >
-        by Iyonna Floyd
+        <div class="container">
+          <div class="row">
+            <div class="col-4" id="sunday">
+              Sunday <br />
+              ⛅ 42°|34°
+            </div>
+            <div class="col-4" id="monday">
+              Monday <br />
+              ⛅ 42°|34°
+            </div>
+            <div class="col-4" id="tuesday">
+              Tuesday <br />
+              🌧 42°|31°
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <div class="row">
+            <div class="col-3" id="wednesday">
+              Wednesday <br />
+              🌧 52°|41°
+            </div>
+            <div class="col-3" id="thursday">
+              Thursday <br />
+              ☁ 49°|36°
+            </div>
+            <div class="col-3" id="friday">
+              Friday <br />
+              ⛅ 49°|33°
+            </div>
+            <div class="col-3" id="saturday">
+              Saturday <br />
+              🌞 46°|34°
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-    <script src="index.js"></script>
   </body>
 </html>
