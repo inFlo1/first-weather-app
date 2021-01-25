@@ -34,13 +34,15 @@
                   <input
                     type="search"
                     class="form-control"
-                    id="search-text-input"
+                    id="city-input"
                     placeholder="Enter a city"
+                    autocomplete="off"
                   />
                   <div class="btn-group">
                     <button
                       class="btn btn-primary"
-                      type="button"
+                      value="search"
+                      type="submit"
                       id="button-addon2"
                     >
                       <i class="fas fa-search"></i>
@@ -48,7 +50,8 @@
                     <div class="find-your-location">
                       <button
                         class="btn btn-primary"
-                        type="button"
+                        value="search"
+                        type="submit"
                         id="button-addon3"
                       >
                         <i class="fas fa-map-marker-alt"></i>
@@ -77,11 +80,9 @@
         </div>
         <div class="row">
           <div class="col">
-            <div class="box">
-              <div class="weather-image">
-                <img class="big-icon" id="weatherIcon" src="" alt="" />
-              </div>
-            </div>
+            <div class="weather-image">
+              <img class="icon" id="weatherIcon" src="" alt="Clear" />
+            </div class="float-left">
             <h3>
               <div id="temperature"></div>
               <span class="units"
