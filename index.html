@@ -64,73 +64,49 @@
       <main>
         <div class="row">
           <div class="col">
-            <h2>Chicago, IL</h2>
+            <h2 id="city"></h2>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <div id="dayTime">Monday 6:00AM</div>
+            <ul class="todaysDate">
+              <li id="dayTime"></li>
+              <li id="monthDateYear">December 12, 2021</li>
+            </ul>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <div id="dateYear">December 14, 2020</div>
+            <div class="box">
+              <div class="weather-image">
+                <img class="big-icon" id="weatherIcon" src="" alt="" />
+              </div>
+            </div>
+            <h3>
+              <div id="temperature"></div>
+              <span class="units"
+                ><a href="#" id="celsius-link" class="active">°C</a>
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
+            </h3>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <h3><span id="temperature"> 33/16</span> °C|°F</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h3 id="description">Cloudy</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4 id="humidity">Humidity</h4>
+            <ul>
+              <li id="hi-low"></li>
+              <li>Feels Like: <span id="feelsLike"></span></li>
+              <li id="description"></li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+            </ul>
           </div>
         </div>
       </main>
       <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-4" id="sunday">
-              Sunday <br />
-              ⛅ 42°|34°
-            </div>
-            <div class="col-4" id="monday">
-              Monday <br />
-              ⛅ 42°|34°
-            </div>
-            <div class="col-4" id="tuesday">
-              Tuesday <br />
-              🌧 42°|31°
-            </div>
-          </div>
-        </div>
-        <br />
-        <div class="container">
-          <div class="row">
-            <div class="col-3" id="wednesday">
-              Wednesday <br />
-              🌧 52°|41°
-            </div>
-            <div class="col-3" id="thursday">
-              Thursday <br />
-              ☁ 49°|36°
-            </div>
-            <div class="col-3" id="friday">
-              Friday <br />
-              ⛅ 49°|33°
-            </div>
-            <div class="col-3" id="saturday">
-              Saturday <br />
-              🌞 46°|34°
-            </div>
-          </div>
-        </div>
+        <a href="https://github.com/inFlo1/first-weather-app" target="_blank"
+          >Open-source code</a
+        >
+        by Iyonna Floyd
       </footer>
     </div>
     <script src="src/index.js"></script>
