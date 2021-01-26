@@ -24,6 +24,7 @@
   </head>
   <body>
     <div id="container">
+      <div id="weatherApp">
       <h1>inFlo Weather</h1>
       <header>
         <div class="row">
@@ -36,7 +37,7 @@
                     class="form-control"
                     id="city-input"
                     placeholder="Enter a city"
-                    autocomplete="off"
+                    
                   />
                   <div class="btn-group">
                     <button
@@ -74,12 +75,12 @@
           <div class="col">
             <ul class="todaysDate">
               <li id="dayTime"></li>
-              <li id="monthDateYear">December 12, 2021</li>
+              <li id="monthDateYear"></li>
             </ul>
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col" id="imgTemp">
             <div class="weather-image">
               <img class="icon" id="weatherIcon" src="" alt="Clear" />
             </div class="float-left">
@@ -102,14 +103,16 @@
             </ul>
           </div>
         </div>
+        <div class="row week-forecast" id="forecast"></div>
       </main>
-      <footer>
+    </div>
+    <footer>
         <a href="https://github.com/inFlo1/first-weather-app" target="_blank"
           >Open-source code</a
         >
         by Iyonna Floyd
       </footer>
-    </div>
+  </div>
     <script src="src/index.js"></script>
   </body>
 </html>

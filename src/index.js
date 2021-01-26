@@ -8,7 +8,7 @@ let minutes = date.getMinutes();
 if (minutes < 10) {
     minutes = `0${minutes}`;
 }
-let ampm = hours >= 12 ? 'AM' : 'AM';
+let ampm = hours >= 12 ? 'PM' : 'AM';
   hours = hours % 12;
   hours = hours ? hours : 12;
   let days = [
@@ -26,6 +26,8 @@ return `${day} ${hours}:${minutes}${ampm}`;
 
 function displayTemperature(response) {
   console.log(response.data);
+  let dayTimeElement = document.querySelector("#dayTime");
+  dayTimeElement.innerHTML = formatDate(response.data.dt * 1000);
 
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -45,15 +47,14 @@ function displayTemperature(response) {
   let feelsLikeElement = document.querySelector("#feelsLike");
   feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
 
-  let dayTimeElement = document.querySelector("#dayTime");
-  dayTimeElement.innerHTML = formatDate(response.data.dt * 1000);
-
   let iconElement = document.querySelector("#weatherIcon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -68,7 +69,32 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Chicago");

@@ -6,17 +6,25 @@ body {
   text-align: center;
 }
 #container {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#weatherApp {
+  background-image: linear-gradient(
+    180deg,
+    rgba(27, 28, 73, 0),
+    rgba(27, 28, 73, 0.5),
+    rgba(27, 28, 73, 1)
+  );
   font-size: 16px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%;
-  max-width: 500px;
 }
 h1 {
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 20px;
   font-family: "Lobster", cursive;
   text-shadow: 1px 2px 3px #000000;
@@ -29,6 +37,9 @@ h1 {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+}
+.todaysDate {
+  margin: 0;
 }
 #city {
   font-family: "Lobster", cursive;
@@ -45,25 +56,52 @@ main {
   align-items: center;
   text-align: center;
 }
+#imgTemp {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 40px;
+}
 h3 {
   font-family: "Lobster", cursive;
   text-shadow: 1px 2px 3px #000000;
-  font-size: 36px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  font-size: 40px;
+  display: flex;
+  margin-bottom: 25px;
+
+  align-items: center;
+  justify-content: center;
 }
 #temperature {
   display: inline;
 }
-.weather-image img {
-  display: inline;
-  margin: 0 auto;
-  height: 64px;
-  width: 64px;
-  filter: drop-shadow(3px 3px 4px rgb(0, 105, 217));
+div.weather-image img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: 110px;
+  width: 110px;
+  filter: drop-shadow(3px 3px 4px rgb(3, 238, 226));
 }
+#celsius-link,
+#fahrenheit-link {
+  color: rgb(0, 105, 217);
+  cursor: pointer;
+}
+
+#celsius-link.active,
+#fahrenheit-link.active {
+  color: rgb(255, 255, 255);
+  cursor: default;
+}
+#celsius-link.active:hover,
+#fahrenheit-link.active:hover {
+  text-decoration: none;
+}
+
 ul {
-  margin: 0;
+  margin-bottom: 50px;
   padding: 0;
 }
 li {
@@ -75,8 +113,27 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+.week-forecast {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+.week-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+.week-forecast-temperature {
+  text-align: center;
+  color: rgb(135, 135, 135);
+  font-size: 13px;
+  font-weight: 400;
+  height: auto;
+  white-space: nowrap;
+}
 footer {
-  color: rgb(255, 255, 255);
+  color: rgb(27, 28, 73);
   padding-left: 10px;
   text-align: left;
   font-size: 12px;
